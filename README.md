@@ -4,21 +4,19 @@ A quiet, editorial Obsidian theme. Warm off-white surfaces, one deep moss
 accent, generous radius, Georgia for reading — no gradients, no neon,
 nothing fighting for your attention.
 
-<!-- Screenshot: not yet added. A real screenshot of the theme rendered in
-     Obsidian is required before this can be submitted to Obsidian's
-     community theme list - see CONTRIBUTING.md. -->
+![Warm Paper screenshot](screenshot.png)
 
 ## Install
 
-**Manually, right now:**
+**From Obsidian's theme browser (recommended):** **Settings → Appearance →
+Themes → Manage**, search "Warm Paper", select it.
+
+**Manually:**
 
 1. Download `theme.css` and `manifest.json` from this repo.
 2. In your vault, create the folder `.obsidian/themes/Warm Paper/` and put
    both files inside it.
 3. In Obsidian: **Settings → Appearance → Themes**, select **Warm Paper**.
-
-**From Obsidian's theme browser:** not yet available — this theme hasn't
-been submitted to Obsidian's official community theme list yet.
 
 ## Light and dark
 

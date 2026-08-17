@@ -206,18 +206,22 @@ input[type="checkbox"]:checked {
 	border: 1px solid var(--background-modifier-border);
 }
 
-/* Transcript callout: the custom "[!transcript]" type Nous emits for a
-   meeting/voice note's raw transcript - a quiet collapsible bar instead of
-   a colored [!note] callout. Collapsed, the whole thing is one bar; open,
-   the header flattens to its top corners and the body attaches below it. */
-.callout[data-callout="transcript"] {
-	--callout-icon: lucide-volume-2;
+/* Every callout, [!note] included: a quiet flat bar, no blue, no colored
+   left border - Nous's collapsed transcript is a plain [!note] callout
+   (Obsidian's Live Preview only renders its own known built-in types with
+   real icon/color/fold chrome; a custom type like "[!transcript]" falls
+   back to a generic blue "pick a real type" editing widget instead of a
+   normal callout, no matter what CSS targets it), so restyling [!note]
+   itself is what actually reaches it in both Reading view and Live
+   Preview. Collapsed, the whole thing is one bar; open, the header
+   flattens to its top corners and the body attaches below it. */
+.callout[data-callout="note"] {
 	background-color: var(--background-secondary);
 	border: none;
 	border-radius: 12px;
 	padding: 0;
 }
-.callout[data-callout="transcript"] .callout-title {
+.callout[data-callout="note"] .callout-title {
 	padding: 12px 16px;
 	color: var(--text-muted);
 	font-family: var(--font-interface);
@@ -225,29 +229,27 @@ input[type="checkbox"]:checked {
 	font-weight: 600;
 	border-radius: 12px;
 }
-.callout[data-callout="transcript"] .callout-icon svg {
+.callout[data-callout="note"] .callout-icon svg {
 	width: 14px;
 	height: 14px;
 	color: var(--text-muted);
 }
-.callout[data-callout="transcript"]:not(.is-collapsed) {
+.callout[data-callout="note"]:not(.is-collapsed) {
 	background-color: transparent;
 }
-.callout[data-callout="transcript"]:not(.is-collapsed) .callout-title {
+.callout[data-callout="note"]:not(.is-collapsed) .callout-title {
 	background-color: var(--background-secondary);
 	border-radius: 12px 12px 0 0;
 }
-.callout[data-callout="transcript"] .callout-content {
-	border: 1px solid var(--background-modifier-border);
-	border-top: none;
-	border-radius: 0 0 12px 12px;
+.callout[data-callout="note"] .callout-content {
+	border: none;
 	padding: 16px 18px;
 	font-family: var(--font-text);
 	font-size: 13.5px;
 	color: var(--text-normal);
 	line-height: 1.55;
 }
-.callout[data-callout="transcript"] .callout-title:hover {
+.callout[data-callout="note"] .callout-title:hover {
 	background-color: var(--background-modifier-hover);
 }
 
@@ -286,14 +288,18 @@ select {
 	background-color: var(--interactive-accent);
 }
 
-/* Properties panel: one quiet card, not a bordered box per row. Obsidian's
-   default gives every key and every value field its own background/border,
-   which reads as a grid of little boxes on a warm paper page - flatten it
-   to a single card with plain label-left/value-right rows instead. */
+/* Properties panel: one quiet card, no borders anywhere inside it.
+   Obsidian's default gives every key and every value field its own
+   background/border, which reads as a grid of little boxes on a warm paper
+   page - strip every one of them so it's plain label-left/value-right
+   rows on a single flat card. overflow: hidden on the container is load-
+   bearing: without it, the sharp-cornered rows inside sit flush against
+   the container's edge and the radius never reads as rounded at all. */
 .metadata-container {
 	background-color: var(--background-secondary);
 	border-radius: var(--radius-l);
 	padding: 4px 12px;
+	overflow: hidden;
 }
 .metadata-properties-heading {
 	background-color: transparent;
@@ -301,25 +307,28 @@ select {
 .metadata-property-icon {
 	display: none;
 }
+.metadata-property,
+.metadata-property-key,
+.metadata-property-key-input,
+.metadata-property-key .clickable-icon,
+.metadata-property-value,
+.metadata-input-text,
+.metadata-input-longtext,
+input.metadata-input-text,
+.metadata-property-value-input {
+	background-color: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+}
 .metadata-property-key-input,
 .metadata-property-key .clickable-icon {
-	background-color: transparent;
 	color: var(--text-muted);
 	font-size: 13px;
 }
 .metadata-property-value,
 .metadata-input-text,
-.metadata-input-longtext,
-input.metadata-input-text {
-	background-color: transparent;
-	border: none;
+.metadata-input-longtext {
 	font-size: 14px;
-}
-.metadata-property {
-	border: none;
-}
-.metadata-property + .metadata-property {
-	border-top: 1px solid var(--background-modifier-border);
 }
 .multi-select-pill {
 	background-color: var(--interactive-accent);

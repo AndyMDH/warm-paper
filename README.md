@@ -27,18 +27,11 @@ scheme**.
 
 | Token | Light | Dark |
 |---|---|---|
-| Editor canvas | `#FAF8F4` | `#1E1D1B` |
-| Sidebars/workspace | `#F5F2ED` | `#1E1D1B` |
-| Surface (cards, popovers) | `#FFFFFF` | `#262522` |
+| Background | `#F5F2ED` | `#1E1D1B` |
+| Surface | `#F3F0EA` | `#262522` |
 | Text | `#1C1B19` | `#EDEAE4` |
-| Muted text | `#8A857D` | `#8A857D` |
+| Muted text | `#8A857D` | `#A19C93` |
 | Accent (moss) | `#4C5138` | `#5E6647` |
-
-## Type
-
-Hanken Grotesk for interface chrome (embedded, one variable-font file
-covers weights 400–700), Georgia for reading and editing body text, SF
-Mono/Menlo for code and paths.
 
 ## License
 

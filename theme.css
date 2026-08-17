@@ -240,3 +240,44 @@ select {
 .checkbox-container.is-enabled {
 	background-color: var(--interactive-accent);
 }
+
+/* Properties panel: one quiet card, not a bordered box per row. Obsidian's
+   default gives every key and every value field its own background/border,
+   which reads as a grid of little boxes on a warm paper page - flatten it
+   to a single card with plain label-left/value-right rows instead. */
+.metadata-container {
+	background-color: var(--background-secondary);
+	border-radius: var(--radius-l);
+	padding: 4px 12px;
+}
+.metadata-properties-heading {
+	background-color: transparent;
+}
+.metadata-property-icon {
+	display: none;
+}
+.metadata-property-key-input,
+.metadata-property-key .clickable-icon {
+	background-color: transparent;
+	color: var(--text-muted);
+	font-size: 13px;
+}
+.metadata-property-value,
+.metadata-input-text,
+.metadata-input-longtext,
+input.metadata-input-text {
+	background-color: transparent;
+	border: none;
+	font-size: 14px;
+}
+.metadata-property {
+	border: none;
+}
+.metadata-property + .metadata-property {
+	border-top: 1px solid var(--background-modifier-border);
+}
+.multi-select-pill {
+	background-color: var(--interactive-accent);
+	color: var(--text-on-accent);
+	border: none;
+}

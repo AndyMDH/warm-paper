@@ -307,18 +307,21 @@ select {
 .metadata-property-icon {
 	display: none;
 }
-.metadata-property,
-.metadata-property-key,
-.metadata-property-key-input,
-.metadata-property-key .clickable-icon,
-.metadata-property-value,
-.metadata-input-text,
-.metadata-input-longtext,
-input.metadata-input-text,
-.metadata-property-value-input {
-	background-color: transparent !important;
-	border: none !important;
-	box-shadow: none !important;
+/* Scoped through .metadata-container rather than !important - Obsidian's
+   own defaults for these use plain single-class selectors, so the extra
+   ancestor beats them on specificity alone. */
+.metadata-container .metadata-property,
+.metadata-container .metadata-property-key,
+.metadata-container .metadata-property-key-input,
+.metadata-container .metadata-property-key .clickable-icon,
+.metadata-container .metadata-property-value,
+.metadata-container .metadata-input-text,
+.metadata-container .metadata-input-longtext,
+.metadata-container input.metadata-input-text,
+.metadata-container .metadata-property-value-input {
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
 }
 .metadata-property-key-input,
 .metadata-property-key .clickable-icon {

@@ -318,7 +318,24 @@ select {
 .metadata-container .metadata-input-text,
 .metadata-container .metadata-input-longtext,
 .metadata-container input.metadata-input-text,
-.metadata-container .metadata-property-value-input {
+.metadata-container .metadata-property-value-input,
+/* Same, on hover/focus - Obsidian's own defaults give the key a
+   background on hover (a "this is editable" affordance); the properties
+   panel here is meant to read as a plain flat list, no color change on
+   interaction anywhere in it. */
+.metadata-container .metadata-property:hover,
+.metadata-container .metadata-property-key:hover,
+.metadata-container .metadata-property-key-input:hover,
+.metadata-container .metadata-property-key-input:focus,
+.metadata-container .metadata-property-key .clickable-icon:hover,
+.metadata-container .metadata-property-value:hover,
+.metadata-container .metadata-input-text:hover,
+.metadata-container .metadata-input-text:focus,
+.metadata-container .metadata-input-longtext:hover,
+.metadata-container .metadata-input-longtext:focus,
+.metadata-container input.metadata-input-text:hover,
+.metadata-container input.metadata-input-text:focus,
+.metadata-container .metadata-property-value-input:hover {
 	background-color: transparent;
 	border: none;
 	box-shadow: none;

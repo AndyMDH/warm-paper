@@ -401,6 +401,19 @@ select {
 	border: none;
 	box-shadow: none;
 }
+/* Belt and braces on top of the above: whichever element Obsidian
+   actually paints the "editable" hover background onto (this has shifted
+   across Obsidian versions), nothing inside a property row may take a
+   background on hover/focus. !important because this has already broken
+   once from a plain-specificity fix losing to an Obsidian internal rule
+   we can't see the exact selector for. */
+.metadata-container .metadata-property:hover,
+.metadata-container .metadata-property:focus-within,
+.metadata-container .metadata-property *:hover,
+.metadata-container .metadata-property *:focus {
+	background-color: transparent !important;
+	box-shadow: none !important;
+}
 .metadata-property-key-input,
 .metadata-property-key .clickable-icon {
 	color: var(--text-muted);
